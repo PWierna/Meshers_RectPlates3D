@@ -36,15 +36,17 @@ print(Nodes)
 with open('Connectivities_and_Coordinates_Eq2D.txt','w') as f:
     sys.stdout = f #Change the standard output to the file created
 
-    print('\nCONNECTIVITIES')
+    print('\nMACRO_MODEL.Conectivity = [\n')
     #np.set_printoptions(threshold=sys.maxsize)
     #print(Elements)
     for row in range(0, np.shape(Elements)[0]):
         print('{0:>6}\t{1:>6}\t{2:>6}\t{3:>6}\t{4:>6}\t{5:>6}\t{6:>6}\t{7:>6}\t{8:>6}\t{9:>6}'.format(int(Elements[row,0]),int    (Elements[row,1]),int(Elements[row,2]),int(Elements[row,3]),int(Elements[row,4]),int(Elements[row,5]),int(Elements[row,6]),int(Elements[row,7]),int(Elements[row,8]),int(Elements[row,9])))
 
-    print('\nCOORDINATES')
-    np.set_printoptions(threshold=sys.maxsize)
-    print(Nodes)
+    print('\n];')
+    print('\nMACRO_MODEL.Coordinates = [\n')
+    for row in range(0, np.shape(Nodes)[0]):
+        print('{0:>6}\t{1:>6}'.format(Nodes[row,0],Nodes[row,1]))
+    print('\n];')
 
 
 
